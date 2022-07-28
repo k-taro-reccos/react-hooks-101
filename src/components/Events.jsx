@@ -3,9 +3,8 @@ import React, { useContext } from "react";
 import Event from "./Event";
 import AppContext from "../contexts/AppContext";
 
-const Events = (props) => {
-  const { state, dispatch } = props;
-  const value = useContext(AppContext);
+const Events = () => {
+  const {state} = useContext(AppContext);
 
   return (
     <>
@@ -21,7 +20,7 @@ const Events = (props) => {
         </thead>
         <tbody>
           {state.map((event, index) => (
-            <Event key={index} event={event} dispatch={dispatch} />
+            <Event key={index} event={event} />
           ))}
         </tbody>
       </table>
